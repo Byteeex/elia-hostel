@@ -18,8 +18,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      NEXT_PUBLIC_SITE_URL: https://byteeex.github.io/elia-hostel/
-      NEXT_PUBLIC_BASE_PATH: /elia-hostel
+      NEXT_PUBLIC_SITE_URL: https://www.hostelelia.com
+      NEXT_PUBLIC_BASE_PATH: ""
     steps:
       - name: Checkout
         uses: actions/checkout@v4

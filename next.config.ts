@@ -7,12 +7,12 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
   images: { unoptimized: true },
   env: {
-    NEXT_PUBLIC_BASE_PATH: process.env.GITHUB_ACTIONS ? "/elia-hostel" : "",
+    NEXT_PUBLIC_BASE_PATH: process.env.NEXT_PUBLIC_BASE_PATH ?? "",
   },
-  ...(process.env.GITHUB_ACTIONS
+  ...(process.env.NEXT_PUBLIC_BASE_PATH
     ? {
-        basePath: "/elia-hostel",
-        assetPrefix: "/elia-hostel/",
+        basePath: process.env.NEXT_PUBLIC_BASE_PATH,
+        assetPrefix: `${process.env.NEXT_PUBLIC_BASE_PATH}/`,
       }
     : {}),
   turbopack: { root: dirname(fileURLToPath(import.meta.url)) },

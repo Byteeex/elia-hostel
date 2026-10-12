@@ -16,9 +16,12 @@ Open `http://localhost:3000`. Run `npm run typecheck`, `npm run lint`, and `npm 
 The `main` branch is configured to deploy automatically to GitHub Pages through
 `.github/workflows/deploy-pages.yml`. Enable **Settings → Pages → Build and
 deployment → Source: GitHub Actions** in the repository, then push to `main`.
-The published site will be available at:
+The published site is configured for the custom domain:
 
-`https://byteeex.github.io/elia-hostel/`
+`https://www.hostelelia.com/`
+
+The repository also contains `public/CNAME`, which keeps the custom domain
+attached to GitHub Pages after each deployment.
 
 ## Configure verified business details
 
