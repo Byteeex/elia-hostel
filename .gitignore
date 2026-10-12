@@ -1,0 +1,9 @@
+node_modules
+.next
+out
+.env*
+!.env.example
+*.tsbuildinfo
+tmp/
+# Supplied raw 4K files are retained locally but unused by the site.
+public/large_castle_door_*
