@@ -3,6 +3,7 @@
 import { useTexture } from "@react-three/drei";
 import { useLayoutEffect, useMemo, useEffect, useRef } from "react";
 import * as THREE from "three";
+import { assetPath } from "@/lib/assets";
 
 type Leaf = { position: THREE.Vector3; rotation: THREE.Euler; size: number; young: boolean };
 type Stem = { start: THREE.Vector3; end: THREE.Vector3 };
@@ -229,8 +230,8 @@ function StemInstances({ stems }: { stems: Stem[] }) {
 }
 
 export function InteriorPlants({ mobile }: { mobile: boolean }) {
-  const mature = useTexture("/textures/ivy-leaf.webp");
-  const young = useTexture("/textures/ivy-leaf-young.webp");
+  const mature = useTexture(assetPath("/textures/ivy-leaf.webp"));
+  const young = useTexture(assetPath("/textures/ivy-leaf-young.webp"));
   const maps = useMemo(() => [mature, young].map(source => {
     const map = source.clone();
     map.colorSpace = THREE.SRGBColorSpace;

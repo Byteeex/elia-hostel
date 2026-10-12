@@ -6,6 +6,9 @@ const nextConfig: NextConfig = {
   output: "export",
   trailingSlash: true,
   images: { unoptimized: true },
+  env: {
+    NEXT_PUBLIC_BASE_PATH: process.env.GITHUB_ACTIONS ? "/elia-hostel" : "",
+  },
   ...(process.env.GITHUB_ACTIONS
     ? {
         basePath: "/elia-hostel",

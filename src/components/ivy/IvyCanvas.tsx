@@ -8,6 +8,7 @@ import { useTexture } from "@react-three/drei";
 import * as THREE from "three";
 import { buildPlant } from "@/components/three/botany";
 import { qualityPresets, type SceneMetrics, type SceneQuality } from "@/components/three/quality";
+import { assetPath } from "@/lib/assets";
 
 type Props = { metrics: SceneMetrics; quality: SceneQuality; onDegrade: () => void; onError: () => void };
 
@@ -21,7 +22,7 @@ function DocumentScene({ metrics, quality, onDegrade }: Omit<Props, "onError">) 
   const frameSamples = useRef({ count: 0, sum: 0, lastDowngrade: 0 });
   const dummy = useMemo(() => new THREE.Object3D(), []);
   const stemMaterial = useMemo(() => new THREE.MeshStandardMaterial({ color: "#526443", roughness: .9 }), []);
-  const leafTextures = useTexture(["/textures/ivy-leaf.webp", "/textures/ivy-leaf-young.webp"]);
+  const leafTextures = useTexture([assetPath("/textures/ivy-leaf.webp"), assetPath("/textures/ivy-leaf-young.webp")]);
   const leafMaterials = useMemo(() => leafTextures.map(source => {
     const texture = source.clone();
     texture.colorSpace = THREE.SRGBColorSpace;

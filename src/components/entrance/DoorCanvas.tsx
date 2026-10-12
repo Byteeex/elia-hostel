@@ -6,8 +6,9 @@ import gsap from "gsap";
 import { useEffect, useMemo, useRef } from "react";
 import * as THREE from "three";
 import { InteriorPlants } from "./InteriorPlants";
+import { assetPath } from "@/lib/assets";
 
-const URL = "/models/large-castle-door-1k.glb";
+const URL = assetPath("/models/large-castle-door-1k.glb");
 
 function Door({ entering, onComplete }: { entering: boolean; onComplete: () => void }) {
   const { scene } = useGLTF(URL);
@@ -53,7 +54,7 @@ function Door({ entering, onComplete }: { entering: boolean; onComplete: () => v
 }
 
 function HangingIvy() {
-  const leaf = useTexture("/textures/ivy-leaf.webp");
+  const leaf = useTexture(assetPath("/textures/ivy-leaf.webp"));
   const leafMap = useMemo(() => {
     const map = leaf.clone();
     map.colorSpace = THREE.SRGBColorSpace;
