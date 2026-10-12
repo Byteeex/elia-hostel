@@ -1,6 +1,4 @@
 export function assetPath(path: string) {
-  const basePath = typeof window !== "undefined" && window.location.hostname.endsWith("github.io")
-    ? "/elia-hostel"
-    : "";
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
   return `${basePath}${path}`;
 }

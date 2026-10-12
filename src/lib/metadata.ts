@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { absoluteUrl, site } from "./site";
+import { assetPath } from "./assets";
 
 export function pageMetadata(title: string, description: string, path: string): Metadata {
   const canonical = absoluteUrl(path);
@@ -13,7 +14,7 @@ export function pageMetadata(title: string, description: string, path: string): 
       url: canonical,
       siteName: site.name,
       type: "website",
-      images: site.siteUrl ? [{ url: "/images/elia-reception-salon.jpg", alt: "Reception salon at Elia Hostel" }] : undefined,
+      images: site.siteUrl ? [{ url: assetPath("/images/elia-reception-salon.jpg"), alt: "Reception salon at Elia Hostel" }] : undefined,
     },
   };
 }

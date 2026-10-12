@@ -1,3 +1,5 @@
+import { assetPath } from "@/lib/assets";
+
 export type Room = {
   id: string;
   name: string;
@@ -20,16 +22,16 @@ export const site = {
   instagram: optional(process.env.NEXT_PUBLIC_INSTAGRAM_URL),
   streetAddress: optional(process.env.NEXT_PUBLIC_STREET_ADDRESS),
   bookingUrl: optional(process.env.NEXT_PUBLIC_BOOKING_URL),
-  logoPath: optional(process.env.NEXT_PUBLIC_LOGO_PATH) || "/images/elia-wordmark.png",
-  emblemPath: "/images/elia-emblem.png",
-  fullLogoPath: "/images/elia-logo-full.png",
+  logoPath: optional(process.env.NEXT_PUBLIC_LOGO_PATH) || assetPath("/images/elia-wordmark.png"),
+  emblemPath: assetPath("/images/elia-emblem.png"),
+  fullLogoPath: assetPath("/images/elia-logo-full.png"),
   siteUrl: optional(process.env.NEXT_PUBLIC_SITE_URL),
   mapLat: optional(process.env.NEXT_PUBLIC_MAP_LAT),
   mapLng: optional(process.env.NEXT_PUBLIC_MAP_LNG),
   breakfast: undefined as string | undefined,
   amenities: [] as string[],
   prices: {} as Record<string, number>,
-  propertyPhotos: ["/images/elia-reception-salon.jpg", "/images/elia-dorm.jpg"],
+  propertyPhotos: [assetPath("/images/elia-reception-salon.jpg"), assetPath("/images/elia-dorm.jpg")],
 };
 
 export const rooms: Room[] = [
