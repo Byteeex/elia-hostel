@@ -11,6 +11,15 @@ npm run dev
 
 Open `http://localhost:3000`. Run `npm run typecheck`, `npm run lint`, and `npm run build` before deployment.
 
+## Deploy to GitHub Pages
+
+The `main` branch is configured to deploy automatically to GitHub Pages through
+`.github/workflows/deploy-pages.yml`. Enable **Settings → Pages → Build and
+deployment → Source: GitHub Actions** in the repository, then push to `main`.
+The published site will be available at:
+
+`https://byteeex.github.io/elia-hostel/`
+
 ## Configure verified business details
 
 Copy `.env.example` to `.env.local` and fill in confirmed values. At minimum, add `NEXT_PUBLIC_CONTACT_EMAIL` or `NEXT_PUBLIC_WHATSAPP_NUMBER` to enable the contact and booking forms. Email forms open the visitor's email application with a prepared message; WhatsApp forms open a prepared chat. The visitor still has to send the message in that application. No information is stored by this site.
